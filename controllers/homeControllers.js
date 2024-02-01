@@ -5,7 +5,7 @@ export const homeController = (req, res) =>{
 
 
 export const employeeSignupForm = (req, res) => {
-    res.status(200).render('signup')
+    res.status(200).render('registered')
 }
 
 

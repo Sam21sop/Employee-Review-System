@@ -1,0 +1,44 @@
+Employee-Review-System/
+    |-- config/
+    |       |-- database.js
+    |
+    |-- controllers/
+    |       |-- adminController.js
+    |       |-- employeeController.js
+    |
+    |-- middleware/
+    |       |-- authMiddleware.js
+    |       |-- errorHandlerMiddleware.js
+    |
+    |-- models/
+    |       |-- employeeModel.js
+    |       |-- performanceReviewModel.js
+    |
+    |-- repository/
+    |       |-- adminRepository.js
+    |       |-- employeeRepository.js
+    |
+    |-- routes/
+    |       |-- adminRoutes.js
+    |       |-- employeeRoutes.js
+    |
+    |-- utils/
+    |       |-- errorHandler.js
+    |       |-- processEnvVar.js
+    |       |-- sendTokenToCookie.js
+    |
+    |-- views/
+    |       |-- admin/
+    |       |   |-- employees.ejs
+    |       |   |-- performanceReviews.ejs
+    |       |   |-- assignReviews.ejs
+    |       |-- employee/
+    |       |   |-- feedbackList.ejs
+    |       |   |-- submitFeedback.ejs
+    |       |-- login.ejs
+    |       |-- register.ejs
+    |
+    |-- index.js
+    |-- package.json
+    |-- README.md
+    |-- server.js

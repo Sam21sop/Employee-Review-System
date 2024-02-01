@@ -1,5 +1,4 @@
-import employeeModel from "../models/employeeSchema.js";
-
+import employeeModel from "../models/employeeModel.js";
 
 // create new employee repo
 export const createNewEmployeeRepo = async (employeData)=>{
