@@ -28,7 +28,6 @@ Application that allows employees to submit feedback toward each other’s perfo
     - email
     - password
     - role ['admin', 'employee']
-
 2. Performance Riview Model
     - 
 
