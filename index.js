@@ -1,25 +1,30 @@
 // import necessory modules
 import express from 'express';
+import path from 'path';
 import { errorHandlerMiddleware } from './middlewares/errorHandlerMiddleware.js';
 import employeeRouter from './routes/employeeRoutes.js';
+import homeRouter from './routes/homeRoutes.js';
 
 
 // create server
 const server = express();
 
-// setup default view engine
+// setup default view engine as ejs
+server.set('view engine', 'ejs');
+server.set('views', path.resolve("views"))
+
+// Serve static files from the public directory
+server.use(express.static(path.resolve('public')));
 
 // express middleware to parse URL-encoded request
 server.use((express.urlencoded({extended:true})))
 server.use(express.json())
 
 
-// routes
-server.use('/api/employee', employeeRouter)
+// Home routes
+server.use('/', homeRouter);
+server.use('/api/employee', employeeRouter);
 
-server.get('/', (req, res)=>{
-    res.send("Hello devloper!")
-});
 
 
 // error handler middleware

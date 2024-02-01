@@ -6,7 +6,7 @@ import processEnvVar from "../utils/processEnvVar.js";
 import ErrorHandler from "../utils/errorHandler.js";
 
 const employeeSchema = mongoose.Schema({
-  name: {
+  username: {
     type: String,
     required: [true, "user name required"],
     maxlength: [25, "user cant exceed 25 character"],
