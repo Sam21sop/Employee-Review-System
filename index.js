@@ -4,14 +4,17 @@ import path from 'path';
 import { errorHandlerMiddleware } from './middlewares/errorHandlerMiddleware.js';
 import employeeRouter from './routes/employeeRoutes.js';
 import homeRouter from './routes/homeRoutes.js';
+import expressEjsLayouts from 'express-ejs-layouts';
 
 
 // create server
 const server = express();
 
+
 // setup default view engine as ejs
+server.use(expressEjsLayouts)
 server.set('view engine', 'ejs');
-server.set('views', path.resolve("views"))
+server.set('views', "./views")
 
 // Serve static files from the public directory
 server.use(express.static(path.resolve('public')));
