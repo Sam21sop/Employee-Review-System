@@ -2,19 +2,17 @@ import mongoose from "mongoose";
 
 const reviewSchema = mongoose.Schema(
     {
-        text: {
+        title: {
             type: String,
             required: true
         },
-        reviewer: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Employee",
+        feedback: {
+            type: String,
             required: true
         },
-        reviewed: {
+        participants: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Employee',
-            required: true
         }
     },
     {
