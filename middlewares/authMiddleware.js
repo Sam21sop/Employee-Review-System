@@ -17,7 +17,7 @@ export const authorization = async (req, res, next) => {
 
 
 // this middleware for admin access only
-export const authorizeByAdmin = async (req, res, next) => {
+export const authorizeByAdmin = (req, res, next) => {
     return async (req, res, next) => {
         if(role.include(req.employee.role !== 'admin')){
             return next(new ErrorHandler(403, `Role: ${req.employee.role} is not allowed to access this resources.`))

@@ -2,6 +2,7 @@ import { Router } from "express";
 import { employeeSignupForm, employeeLoginForm } from "../controllers/homeControllers.js";
 import { authorization, authorizeByAdmin } from "../middlewares/authMiddleware.js";
 import { createNewEmployeeController, employeeLoginController } from "../controllers/employeeControllers.js";
+import { getAllEmployeeController } from "../controllers/adminControllers.js";
 
 
 const employeeRouter = Router();
@@ -22,8 +23,8 @@ employeeRouter.route('/login').post(employeeLoginController);
 // // Employee GET Routes
 // employeeRouter.route("/employee/:id/review").get(auth, );
 
-// // Admin GET Routes
-// employeeRouter.route("/admin/all-employee-details").get(auth, authorizeByAdmin("admin"), getAllEmployeeDetailsController);
+// Admin GET Routes
+employeeRouter.route("/admin/all-employee-details").get(authorization, authorizeByAdmin("admin"), getAllEmployeeController);
 
 // // Implement route for updating role of other users
 // employeeRouter.route("/admin/update/:id").put(auth, authorizeByAdmin("admin"), updateEmployeeRoleController);
