@@ -9,6 +9,7 @@ const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash'); 
 const flashMiddleWare = require('./config/flashMiddleware');
+const dotenv = require('dotenv').config()
 
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -28,7 +29,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://sopan:0BXzeYUSBMNBWc7d@mydb.8p6posr.mongodb.net/?retryWrites=true&w=majority',
+        mongoUrl: dotenv.BASE_URL,
         autoRemove: 'disabled'
     },
         (err) => {

@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const DB = 'mongodb+srv://sopan:0BXzeYUSBMNBWc7d@mydb.8p6posr.mongodb.net/?retryWrites=true&w=majority'
+const dotenv = require('dotenv').config();
+const BASE_URL = dotenv.BASE_URL;
 
 
-mongoose.connect(DB).then(()=>{
+mongoose.connect(BASE_URL).then(()=>{
      console.log('connection successful');
  }).catch((err) => console.log("no connection " + err));
 
