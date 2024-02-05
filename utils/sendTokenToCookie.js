@@ -9,7 +9,8 @@ const sendToken = async (user, res, statusCode)=>{
         httpOnly:true
     };
 
-    res.status(statusCode).cookie("token", token, cookieOption).json({success:true, user, token})
+    res.status(statusCode).cookie("token", token, cookieOption).render('login');
+    // res.status(statusCode).cookie("token", token, cookieOption).json({success:true, user, token})
 };
 
 // export default reference of function

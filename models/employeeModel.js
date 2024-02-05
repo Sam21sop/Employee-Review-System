@@ -21,7 +21,7 @@ const employeeSchema = mongoose.Schema({
   password: {
     type: String,
     required: [true, "Password required."],
-    minlength: [6, "Password should have min 6 length"],
+    minlength: [5, "Password should have min 6 length"],
     maxlength: [16, "Password should have max 16 length"],
     select: false,
   },

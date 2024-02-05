@@ -7,10 +7,10 @@ import sendToken from "../utils/sendTokenToCookie.js";
 export const getAllEmployeeController = async (req, res, next) => {
     try {
         const employees = await getAllEmployeesRepo();
-        console.log(employees);
-        res.render('admin/employees', {employees});
+        res.render('dashboard', {employees});
 
     } catch (error) {
+        console.log(error);
         return next(new ErrorHandler(500, error));
     }
 };
