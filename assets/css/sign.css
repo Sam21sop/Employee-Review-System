@@ -1,0 +1,77 @@
+*{
+    /* background-image: url(../images/signBack.jpg); */
+}
+
+/* The styling for sign-in / sign-up / forgetPassword is same */
+/* It is the main container */
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20vh;
+    margin-left: 30vw;
+    height: 50vh;
+    width: 40vw;
+    border: 1px solid black;
+}
+/* The main container is divided into two part */
+.companyLogo{ 
+    background-color:#188b6b;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 100%;
+    width: 40%;
+    
+}
+/* Company Logo,  */
+.companyLogo img{
+   height:100px;
+   width:100px;
+   
+}
+
+.formInput{
+     background-color:#B4F1B1;
+    height: 100%;
+    width: 60%;
+    /* margin-left: 10%; */
+}
+/* Form heading */
+.formInput h1{
+    margin-left: 30%;
+    color:black;
+}
+
+.formInput form{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+form input{
+    width: 90%;
+    height: 35px;
+    margin: 10px 0px;
+    border-radius: 30px;
+    padding: 10px;
+}
+/* Styling for the button, and submit button */
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+}
+.submitButtons{
+    width: 40%;
+    margin-left: 10%;
+}
+
+.submitButtons button{
+    width: 100%;
+    border-radius: 30px;
+    background-color: #B4F1B1;
+}
+
+.extraStuff{
+    margin-top: 20px;
+}

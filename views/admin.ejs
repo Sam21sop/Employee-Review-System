@@ -1,12 +1,17 @@
 <link rel="stylesheet" href="/css/admin.css">
 <div class="container-fluid mt-2">
-    <div class="heading">Kindly, assign Recipient and Reviewer</div>
+    <div class="heading">Kindly,assign Recipient and Reviewer</div>
     <div class="reviewContainer">
+
         <div class="reviewer">
+
             <div class="text-center">
                 Assign Task
+
             </div>
             <hr>
+            
+              
 
             <form action="/admin/setReviewes" method="POST" class="mt-1 card-body">
                 <div>
@@ -26,7 +31,9 @@
                     <select class="form-select form-select" aria-label="Default select example" name="reciver">
                         <option selected>Reciver</option>
                         <% for(let i = 0; i<employe.length ; i++){ %>
-                        <option value= <%= employe[i].id %> > <%= employe[i].name %> </option>
+                        
+                            <option value= <%= employe[i].id %> > <%= employe[i].name %> </option>
+                            
                         <%}%>
                     </select>
                 </div>
