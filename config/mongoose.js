@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config();
-const BASE_URL = dotenv.BASE_URL;
+const BASE_URL = 'mongodb+srv://sopan:0BXzeYUSBMNBWc7d@mydb.8p6posr.mongodb.net/?retryWrites=true&w=majority'
 
 
 mongoose.connect(BASE_URL).then(()=>{
