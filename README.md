@@ -3,20 +3,17 @@ Application that allows employees to submit feedback toward each other’s perfo
 
 ### Folder Structure 
 
-![Folder Structure](./public/images/FolderStructure.JPG)
+![Folder Structure](./public/FolderStructure.JPG)
 
 ### Front-End
 #### Home Page
-![ page view](./public/images/)
+![ page view](./public/Home.JPG)
 
-#### Home Page
-![ page view](./public/images/)
+#### login Page
+![ page view](./public/login.JPG)
 
-#### Home Page
-![ page view](./public/images/)
-
-#### Home Page
-![ page view](./public/images/)
+#### signup Page
+![ page view](./public/signup.JPG)
 
 
 ### Back-End
@@ -29,7 +26,9 @@ Application that allows employees to submit feedback toward each other’s perfo
     - password
     - role ['admin', 'employee']
 2. Performance Riview Model
-    - 
+    - title
+    - feedback
+    = participants
 
 ### API End Points
 

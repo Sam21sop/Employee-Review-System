@@ -1,37 +1,56 @@
-// import necessory modules
-import express from 'express';
-import path from 'path';
-import { errorHandlerMiddleware } from './middlewares/errorHandlerMiddleware.js';
-import employeeRouter from './routes/employeeRoutes.js';
-import homeRouter from './routes/homeRoutes.js';
-import expressEjsLayouts from 'express-ejs-layouts';
+const express = require('express');
+const app = express(); 
+const expressLayout = require('express-ejs-layouts');
+const db = require('./config/mongoose');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local');
+const MongoStore = require('connect-mongo');
+const flash = require('connect-flash'); 
+const flashMiddleWare = require('./config/flashMiddleware');
 
 
-// create server
-const server = express();
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('./assets'));
+app.set('view engine','ejs');
+app.set('views','./views');
+app.use(expressLayout);
+
+// mongo store is used to store the session cookie in the db 
+app.use(session({
+    name: "ERS",
+    // change secret during before deployment in production 
+    secret: "employeeReviewSystem",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb+srv://sopan:0BXzeYUSBMNBWc7d@mydb.8p6posr.mongodb.net/?retryWrites=true&w=majority',
+        autoRemove: 'disabled'
+    },
+        (err) => {
+            console.log(err || 'connect-mongo setup ok');
+        }
+    )
+}))
 
 
-// setup default view engine as ejs
-server.use(expressEjsLayouts)
-server.set('view engine', 'ejs');
-server.set('views', "./views")
-
-// Serve static files from the public directory
-server.use(express.static(path.resolve('public')));
-
-// express middleware to parse URL-encoded request
-server.use((express.urlencoded({extended:true})))
-server.use(express.json())
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
+app.use(flash());
+app.use(flashMiddleWare.setFlash);
+app.use('/' , require('./routes/index'));
 
 
-// Home routes
-server.use('/', homeRouter);
-server.use('/api/employee', employeeRouter);
-
-
-
-// error handler middleware
-server.use(errorHandlerMiddleware)
-
-// export default server object instance
-export default server;
+const PORT = 8000;
+app.listen(PORT, function(err){
+    if(err){
+        console.log("Error in running the app.");
+        return ;
+    }
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
