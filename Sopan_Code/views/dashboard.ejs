@@ -1,0 +1,25 @@
+<div class="dashboard">
+    <!-- view for admin login  -->
+    <% if (employee.role=="admin" ) { %>
+        <div>
+            <h1>Admin - Employees List</h1>
+            <ul>
+                <% employees.forEach(emp=> { %>
+                    <li>
+                        <%= emp.username %>
+                    </li>
+                    <li>
+                        <%= emp.username %>
+                    </li>
+                    <li>
+                        <%= emp.username %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+    <!-- view for employee login  -->
+    <%} else { %>
+        <p> This is Employee Views</p>
+    <% } %>
+</div>

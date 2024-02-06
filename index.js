@@ -7,11 +7,12 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
+
+// they are used for showing action notifications
 const flash = require('connect-flash'); 
 const flashMiddleWare = require('./config/flashMiddleware');
 
-
-
+// For getting the output from req.body(it will parse the upcoming request to String or Arrays).
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('./assets'));
 app.set('view engine','ejs');
@@ -29,7 +30,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://sopan:0BXzeYUSBMNBWc7d@mydb.8p6posr.mongodb.net/?retryWrites=true&w=majority',
+        mongoUrl: 'mongodb+srv://whiteWolff:praduman@cluster0.an8uy3k.mongodb.net/ERS?retryWrites=true&w=majority',
         autoRemove: 'disabled'
     },
         (err) => {
@@ -38,16 +39,21 @@ app.use(session({
     )
 }))
 
-
+// Using passport
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+
+// Using Connect flash
 app.use(flash());
 app.use(flashMiddleWare.setFlash);
+
+// setting up the router, following MVC structure.
 app.use('/' , require('./routes/index'));
 
 
-const PORT = 8000;
+// Setting up the server at the given port
+const PORT = 8000; 
 app.listen(PORT, function(err){
     if(err){
         console.log("Error in running the app.");

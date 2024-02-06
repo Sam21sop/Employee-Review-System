@@ -5,7 +5,7 @@ module.exports.assignWork = async function(req, res){
     let employe = await Users.find({});
 
     return res.render('admin',  {
-        title : 'ERS | Assign Work',
+        title : 'Assign Work',
         employe : employe
     });
 }
@@ -23,7 +23,7 @@ module.exports.showEmployeeList = async function(req, res){
     let employeList = await Users.find({});
 
     return res.render('employee', {
-        title : "ERS | Employe-List",
+        title : "Employe-List",
         employes : employeList
     });
 }
@@ -74,8 +74,6 @@ module.exports.setReviewrAndReviewe = async function(req, res){
     }
 
 }
-
-
 // This function is for making the new Admin
 module.exports.newAdmin = async function(req, res){
     try{
@@ -112,7 +110,6 @@ module.exports.newAdmin = async function(req, res){
     }
 }
 
-
 // This function is for deleting the employee
 module.exports.deleteEmployee = async function(req, res){
     try{
@@ -140,9 +137,8 @@ module.exports.deleteEmployee = async function(req, res){
     }
 }
 
-
 module.exports.addEmployee = function(req, res){
     return res.render('addEmployee', {
-        title : 'ERS | Add Employee'
+        title : 'Add Employee'
     });
 }

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// This is Schema for review, it will contain the content of review, and the reviwer and reviewed 
 
 const reviewSchema = mongoose.Schema({
     content : {

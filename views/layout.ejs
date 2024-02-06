@@ -9,36 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title%> </title>
 </head>
-<body style="background-color: rgba(151, 232, 131, 0.945);">
+<body >
     <%- include('_header')%>
 
-
     <%-body%>
-
-    <%- include('_footer')%>
-    <!-- It is for displying the messages, in the pages -->
-    <script>
-        <% if (flash.success && flash.success.length > 0)  { %>
-            new Noty({
-                theme: 'relax',
-                text: "<%= flash.success %>",
-                type: 'success',
-                layout: 'topRight',
-                timeout: 1500
-                
-            }).show();    
-        <% } %>
-
-        <% if (flash.error && flash.error.length > 0) { %>
-            new Noty({
-                theme: 'relax',
-                text: "<%= flash.error %>",
-                type: 'error',
-                layout: 'topRight',
-                timeout: 1500
-                
-            }).show();    
-        <% } %>
-    </script>
 </body>
 </html>

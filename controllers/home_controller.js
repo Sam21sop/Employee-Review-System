@@ -13,7 +13,6 @@ module.exports.home = async function(req, res){
         // Fetching the user and review from the form
         let user = await User.findById(req.user.id);
         let review = await Review.find({ reviewer: req.user.id });
-        // console.log(review);
 
         // takkng all the necessary part of recipent user in recipent array so that we can pass it as a varibalbe'
         let recipent = [];
@@ -21,11 +20,11 @@ module.exports.home = async function(req, res){
             let userName = await User.findById(user.userToReview[i]);
             recipent.push(userName);
         }
+        
         // Taking all the necessary imformation of the reviewers in review array, and passing it in homePage
         let reviews = [];
         for(let i = 0; i<review.length ; i++){
             let reviewUser = await User.findById(review[i].reviewed);
-            // console.log(review); 
             if(reviewUser != null){
                 let currUser = {
                     name : reviewUser.name,
@@ -37,7 +36,7 @@ module.exports.home = async function(req, res){
 
         // Render the page, with the variable made above , and pass them as the argument
         return res.render('home',{
-            title : "ERS | HOME",
+            title : "HOME",
             recipent : recipent,
             reviews : reviews,
             user : user

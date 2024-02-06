@@ -1,19 +1,16 @@
 <link rel="stylesheet" href="/css/sign.css">
 <div class="mainContainer ">
-    <div class="companyLogo">
-        <img src="../images/logo.png">
-    </div>
-
     <div class="formInput">
-        <h1> Welcome </h1>
+        <h1 class="welcome"> Welcome </h1>
+        <h1>Employee Review System</h1>
         <form method="POST" action="/users/create-session" >
             <input type="email" name="email" placeholder="Enter email" required><br>
             <input type="password" name="password" placeholder="Enter password" required><br>
             
             <div class= 'buttons'>
-                <div class="forgetPassword"><a href="/users/forgetPassword"> ForgetPassword </a></div>
-                <div class = 'submitButtons'><button type="submit">Sign In</button></div>
-                
+                <div class = 'submitButtons'>
+                    <button type="submit">Sign In</button>
+                </div>
             </div>
 
             <div class="extraStuff">
