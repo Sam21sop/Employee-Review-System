@@ -35,7 +35,9 @@ review, the admin can remove the employee. The review given to the employee, is 
     - password
     - role ['admin', 'employee']
 2. Performance Riview Model
-    - 
+    - title
+    - feedback
+    - participant
 
 ### API End Points
 
