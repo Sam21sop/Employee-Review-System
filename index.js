@@ -54,7 +54,7 @@ app.use('/' , require('./routes/index'));
 
 
 // Setting up the server at the given port
-const PORT = 8000; 
+const PORT = process.env.PORT; 
 app.listen(PORT, function(err){
     if(err){
         console.log("Error in running the app.");
