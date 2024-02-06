@@ -1,8 +1,8 @@
 
 
 # Employee-Review-System
-A full stack, app used for reviewing employee.
-Hoisted Link :https://soumyasri7978-github-io-project.onrender.com/users/sign-in
+Application that allows employees to submit feedback toward each other’s performance
+
 
 
 ### Description
@@ -12,90 +12,33 @@ as the new admin. Admin can also make the new employee, and they can also assing
 review, the admin can remove the employee. The review given to the employee, is always going to be store in the database.
 
 
-### Tech Stack
 
-Node , Express, Mongodb , EJS , javaScript , html, css
+### Folder Structure 
 
-### How to setup the project on local system
+![Folder Structure](./public/FolderStructure.JPG)
 
-  1. Clone this project
-  2. Start by installing npm if you don't have it already.
-  3. Navigate to Project Directory.
+### Front-End
+#### SignUp Page
+![ page view](./public/signup.JPG)
 
-After reaching the project directory you have to run the following the command.
-   ```` 
-        npm install 
-        npm start || nodemon index.js
-   ````
-
-#### If you want to make an employee as admin then use the secret key : happy.
-
-### Features
-
-  You can review the employees. The admin has the special power to assing, the task to employee, remove the employee, add new admin, and also employee;
-  
-  
-  # HomePage / Admin View
-
-  # Home page / Employee view
-
-  
-  # Sign-Up
+#### Login Page
+![ page view](./public/signup.JPG)
 
 
-  # Sign-In
+### Back-End
 
-  # Forget Password
-  
-  # Assign Task
+#### Database Model
 
-  # Employee List
-  
+1. Employee Model
+    - employeeName
+    - email
+    - password
+    - role ['admin', 'employee']
+2. Performance Riview Model
+    - 
 
-  
+### API End Points
 
-### Folder Structure
+#### Admin 
 
-```
-Employee Review System
-    |
-    |               |--->css
-    |--->assets---->|--->images
-    |             
-    |
-    |               |--->flashMiddleware.js
-    |--->config---->|--->mongoose.js
-    |               |--->passport-local-Stradegy.js
-    |
-    |                  |-->admin_controller.js
-    |--->controllers-->|-->home_controller.js
-    |                  |-->review_controller.js
-    |                  |-->user_controller.js
-    |
-    |               |-->review.js
-    |--->models---->|
-    |               |-->user.js
-    |
-    |              
-    |               |-->admin.js
-    |--->routes---->|-->index.js
-    |               |-->review.js
-    |               |-->user.js
-    |
-    |              |--->_header.ejs
-    |              |---> addEmployee.ejs
-    |              |---> admin.ejs
-    |              |---> employe.ejs
-    |--->views---->|--->forget_password.ejs
-    |              |--->home.ejs
-    |              |--->layout.ejs
-    |              |--->sign_in.ejs
-    |              |--->sign_up.ejs
-    |
-    |-->node_modules
-    |-->.gitignore
-    |--> index.js
-    |--> package-lock.json
-    |-->package.json
-    
-    ````
+#### Employee
