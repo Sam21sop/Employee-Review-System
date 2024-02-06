@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const DB = 'mongodb+srv://soumyasri2245:Soumya22%4034@cluster0.u2ywt3o.mongodb.net/?retryWrites=true&w=majority'
+const dotenv = require('dotenv').config();
+const DB = process.env.BASE_URL;
+// const DB = 'mongodb+srv://soumyasri2245:Soumya22%4034@cluster0.u2ywt3o.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(DB).then(()=>{
      console.log('connection successful');

@@ -7,6 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const MongoStore = require('connect-mongo');
+const dotenv = require('dotenv').config();
 
 // they are used for showing action notifications
 const flash = require('connect-flash'); 
@@ -30,7 +31,7 @@ app.use(session({
         maxAge: (1000 * 60 * 100)
     },
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://whiteWolff:praduman@cluster0.an8uy3k.mongodb.net/ERS?retryWrites=true&w=majority',
+        mongoUrl: process.env.SESSION_URL,
         autoRemove: 'disabled'
     },
         (err) => {
